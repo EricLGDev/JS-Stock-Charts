@@ -62,6 +62,26 @@ async function main() {
         }
     });
 
+    // Average Stock Price Chart
+    new Chart(averagePriceChartCanvas.getContext('2d'), {
+        type: 'pie',
+        data: {
+            labels: stocks.map(stock => stock.meta.symbol),
+            datasets: [{
+                label: 'Average',
+                backgroundColor: stocks.map(stock => (
+                    getColor(stock.meta.symbol)
+                )),
+                borderColor: stocks.map(stock => (
+                    getColor(stock.meta.symbol)
+                )),
+                data: stocks.map(stock => (
+                    calculateAverage(stock.values)
+                ))
+            }]
+        }
+    });
+
     
 
     function findHighest(values) {
