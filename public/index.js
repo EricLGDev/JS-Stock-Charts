@@ -1,3 +1,17 @@
+function getColor(stock){
+    if(stock === "GME"){
+        return 'rgba(230, 0, 92)'
+    }
+    if(stock === "MSFT"){
+        return 'rgba(81, 186, 200)'
+    }
+    if(stock === "DIS"){
+        return 'rgba(255, 255, 0)'
+    }
+    if(stock === "BNTX"){
+        return 'rgba(77, 255, 210)'
+    }
+}
 async function main() {
 
     const timeChartCanvas = document.querySelector('#time-chart');
